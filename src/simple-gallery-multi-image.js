@@ -2,11 +2,12 @@
 	$.fn.multiImageGallery = function(options) {
 		var settings = $.extend({
 			animationType: 'fade',
-			adaptiveHeight: false,
-			imagesPerSlide: 1,
+			adaptiveHeight: true,
+			imagesPerSlide: 2,
 			spaceBetweenImages: 0,
 			description: false,
-			autoRun: false
+			autoRun: false,
+			slidesContainer: '.images-list'
 		}, options);
 		var gEl = $(this);
 		var startX, startY;
@@ -46,7 +47,7 @@
 
 		var setupGallery = function(gal) {
 			var $g = $(gal);
-			var $l = $g.find('.images-list') || null;
+			var $l = $g.find(settings.slidesContainer) || null;
 
 			if (settings.adaptiveHeight) {
 				if (settings.imagesPerSlide > 1) {
@@ -117,7 +118,7 @@
 		var changeImage = function(gal, dir) {
 			var $g = $(gal);
 			var $nav = $g.find('.gallery-nav');
-			var $l = $g.find('.images-list') || null;
+			var $l = $g.find(settings.slidesContainer) || null;
 			var $c = $l.find('.current') || null;
 			var d = dir;
 			if ($l && $c) {
@@ -199,12 +200,12 @@
 
 		$(gEl).each(function(index) {
 			var $thisEl = $(this);
-			var $nav = $(this).find('.gallery-nav');
-			var $l = $(this).find('.images-list') || null;
-			var firstImage = $thisEl.find('.images-list li:first-child img').get(0);
+			var $nav = $thisEl.find('.gallery-nav');
+			var $l = $thisEl.find(settings.slidesContainer) || null;
+			var firstImage = $l.find('li:first-child img').get(0);
 			bindIt($thisEl);
 			if (!firstImage.complete) {
-				$(firstImage).load(function() {
+				$(firstImage).on('load', function() {
 					setupGallery($thisEl);
 				});
 			} else {
