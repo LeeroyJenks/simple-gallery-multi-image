@@ -1,5 +1,5 @@
 (function($) {
-	$.fn.imageGallery = function(options) {
+	$.fn.multiImageGallery = function(options) {
 		var settings = $.extend({
 			animationType: 'fade',
 			adaptiveHeight: false,
