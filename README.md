@@ -1,16 +1,16 @@
 # simple-gallery-multi-image
 A multi-image gallery jQuery plugin based on [simple-gallery](https://github.com/LeeroyJenks/simple-gallery).
 
-##Demo
+## Demo
 [plugins.getdans.info/simple-gallery-multi-image](http://plugins.getdans.info/simple-gallery-multi-image)
 
-##Installation
+## Installation
 Download from GitHub
 
-###Requirements
+### Requirements
 jQuery
 
-###Use
+### Use
 ```html
 <script>
     $(document).ready(function(){
@@ -20,12 +20,12 @@ jQuery
     });
 </script>
 ```
-###Description
+### Description
 
 Some minor CSS must be used in order to get the gallery working properly. You'll need to define the width of the image gallery. `slidesContainer` must be defined for the gallery to work properly.
 Previous and Next buttons must also be added. Touch is already in place.
 
-###Example
+### Example
 
 ```html
 <style>
@@ -117,7 +117,7 @@ Previous and Next buttons must also be added. Touch is already in place.
 </script>
 ```
 
-###Options
+### Options
 
 Options            | Definition
 ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
